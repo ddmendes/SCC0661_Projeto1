@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema targetNamespace="http://www.example.com/curriculo" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.example.com/curriculo" elementFormDefault="qualified" attributeFormDefault="unqualified">
 
+	
+
 	<complexType name="creditsType">
 		<sequence>
 			<element name="aula"     type="integer" />
@@ -15,24 +17,24 @@
 		</restriction>
 	</simpleType>
 
-	<complexType name="disciplineType">
+	<simpleType name="courseIdType">
+		<restriction base="string">
+			<pattern value="[A-Z]{3}\d{4}" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="courseType">
 		<sequence>
 			<element name="nome"      type="string"         />
 			<element name="categoria" type="c:categoryType" />
 			<element name="creditos"  type="c:creditsType"  />
 		</sequence>
-		<attribute name="id">
-			<simpleType>
-				<restriction base="string">
-					<pattern value="[A-Z]{3}\d{4}" />
-				</restriction>
-			</simpleType>
-		</attribute>
+		<attribute name="id" type="c:courseIdType" />
 	</complexType>
 
 	<complexType name="periodType">
 		<sequence>
-			<element name="disciplina" type="c:disciplineType" maxOccurs="unbounded" />
+			<element name="disciplina" type="c:courseType" maxOccurs="unbounded" />
 		</sequence>
 		<attribute name="id" use="required">
 			<simpleType>
@@ -44,23 +46,112 @@
 		</attribute>
 	</complexType>
 
-	<element name="disciplinasDisponiveis">
+	<complexType name="classType">
+		<sequence>
+			<element name="nome" type="string" />
+			<element name="periodo" type="c:periodType" maxOccurs="unbounded">
+				
+			</element>
+		</sequence>
+		<attribute name="id" use="required">
+			<simpleType>
+				<restriction base="integer">
+					<minInclusive value="1" />
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
+
+	<complexType name="availableCoursesType">
+		<sequence>
+			<element name="curso" type="c:classType" maxOccurs="unbounded">
+				<!--Mantém id dos períodos como único-->
+				<unique name="periodId">
+					<selector xpath="periodo" />
+					<field xpath="@id" />
+				</unique>
+			</element>
+		</sequence>
+	</complexType>
+
+	<simpleType name="frequencyType">
+		<restriction base="decimal">
+			<minInclusive value="0"   />
+			<maxInclusive value="100" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="gradeType">
+		<restriction base="decimal">
+			<minInclusive value="0"  />
+			<maxInclusive value="10" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="statusType">
+		<restriction base="string">
+			<enumeration value="aprovado"  />
+			<enumeration value="reprovado" />
+			<enumeration value="cursando"  />
+			<enumeration value="trancado"  />
+		</restriction>
+	</simpleType>
+
+
+	<complexType name="coursesTakenType">
+		<sequence>
+			<element name="frequencia" type="c:frequencyType" />
+			<element name="nota" type="c:gradeType" />
+		</sequence>
+		<attribute name="ref" type="c:courseIdType" use="required"  />
+		<attribute name="status" type="c:statusType" use="required" />
+	</complexType>
+
+	<complexType name="semesterType">
+		<sequence>
+			<element name="disciplina" type="c:coursesTakenType" maxOccurs="unbounded" />
+		</sequence>
+		<attribute name="id" type="positiveInteger" />
+	</complexType>
+
+	<simpleType name="studentIdType">
+		<restriction base="string">
+			<pattern value="\d+" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="studentType">
+		<sequence>
+			<element name="nome" type="string" />
+			<element name="semestre" type="c:semesterType" maxOccurs="unbounded">
+				
+			</element>
+		</sequence>
+		<attribute name="id" type="c:studentIdType" use="required" />
+	</complexType>
+
+	<element name="curriculos">
 		<complexType>
 			<sequence>
-				<element name="curso" type="string" />
-				<element name="periodo" type="c:periodType" maxOccurs="unbounded">
-					<!--Mantém id das disciplinas como chave primária-->
-					<key name="disciplineId">
-						<selector xpath="disciplina" />
-						<field xpath="@id" />
-					</key>
-				</element>
+				<element name="disciplinasDisponiveis" type="c:availableCoursesType" />
+				<element name="aluno" type="c:studentType" maxOccurs="unbounded" />
 			</sequence>
 		</complexType>
-		<!--Mantém id dos períodos como único-->
-		<unique name="periodId">
-			<selector xpath="periodo" />
+		<!---->
+		<unique name="studentId">
+			<selector xpath="aluno" />
 			<field xpath="@id" />
 		</unique>
+		<!--Mantém id de periodo/disciplinas como chave primária-->
+		<key name="courseId">
+			<selector xpath="disciplinasDisponiveis/curso/periodo/disciplina" />
+			<field xpath="@id" />
+		</key>
+		<!--Mantém ref de semestre/disciplina como chave estrangeira-->
+		<keyref name="courseReference" refer="c:courseId">
+			<selector xpath="aluno/semestre/disciplina" />
+			<field xpath="@ref" />
+		</keyref>
 	</element>
+
 </schema>
