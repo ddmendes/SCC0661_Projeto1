@@ -1,24 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema targetNamespace="http://www.example.com/curriculo" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.example.com/curriculo" elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-	<element name="curriculo">
+	<complexType name="creditsType">
+		<sequence>
+			<element name="aula"     type="integer" />
+			<element name="trabalho" type="integer" />
+		</sequence>
+	</complexType>
+
+	<simpleType name="categoryType">
+		<restriction base="string">
+			<enumeration value="obrigatória" />
+			<enumeration value="eletiva"     />
+		</restriction>
+	</simpleType>
+
+	<complexType name="disciplineType">
+		<sequence>
+			<element name="nome"      type="string"         />
+			<element name="categoria" type="c:categoryType" />
+			<element name="creditos"  type="c:creditsType"  />
+		</sequence>
+		<attribute name="id">
+			<simpleType>
+				<restriction base="string">
+					<pattern value="[A-Z]{3}\d{4}" />
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
+
+	<complexType name="periodType">
+		<sequence>
+			<element name="disciplina" type="c:disciplineType" maxOccurs="unbounded" />
+		</sequence>
+		<attribute name="id" use="required">
+			<simpleType>
+				<restriction base="integer">
+					<minInclusive value="1"  />
+					<maxInclusive value="10" />
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
+
+	<element name="disciplinasDisponiveis">
 		<complexType>
 			<sequence>
 				<element name="curso" type="string" />
-				<element name="periodo" maxOccurs="unbounded">
-					<unique name="id" type="integer" use="required" />
-					<complexType>
-						<sequence>
-							<element name="disciplina" maxOccurs="unbounded">
-									<key name="id">
-										<restriction base="string" pattern="[A-Z]{3}\d{4}" />
-									</key>
-							</element>
-						</sequence>
-					</complexType>
+				<element name="periodo" type="c:periodType" maxOccurs="unbounded">
+					<!--Mantém id das disciplinas como chave primária-->
+					<key name="disciplineId">
+						<selector xpath="disciplina" />
+						<field xpath="@id" />
+					</key>
 				</element>
 			</sequence>
 		</complexType>
+		<!--Mantém id dos períodos como único-->
+		<unique name="periodId">
+			<selector xpath="periodo" />
+			<field xpath="@id" />
+		</unique>
 	</element>
-
 </schema>
