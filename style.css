@@ -1,0 +1,41 @@
+body {
+	font-family: Arial, Verdana, sans-serif;
+	width: 100%;
+	margin: 2em;
+}
+
+header {
+	background-color: #FFCC66;
+	padding-bottom: 1.5em;
+}
+
+header h1 {
+	margin: 0;
+	padding-top: 0.3em;
+	padding-left: 0.3em;
+}
+
+header h2 {
+	margin: 0;
+	padding-left: 1.2em;
+	font-style: italic;
+	font-weight: normal;
+}
+
+div#content {
+	display: table-row;
+}
+
+div#content aside {
+	background-color: #FFCC66;
+}
+
+div#content aside,
+div#content div#page-content {
+	display: table-cell;
+}
+
+form ul {
+	list-style: none;
+	padding: 0;
+}

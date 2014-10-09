@@ -1,83 +1,83 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <curriculos xmlns="http://www.example.com/curriculo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="curriculo curriculo.xsd">
 	<disciplinasDisponiveis>
 		<curso id="97001">
-			<nome>Engenharia de ComputaÃ§Ã£o</nome>
+			<nome>Engenharia de Computação</nome>
 			<periodo id="1">
 				<disciplina id="FCM0101">
-					<nome>FÃ­sica I</nome>
-					<categoria>obrigatÃ³ria</categoria>
+					<nome>Física I</nome>
+					<categoria>obrigatória</categoria>
 					<creditos>
 						<aula>6</aula>
 						<trabalho>0</trabalho>
 					</creditos>
 				</disciplina>
 				<disciplina id="FFI0180">
-					<nome>LaboratÃ³rio de FÃ­sica Geral I</nome>
-					<categoria>obrigatÃ³ria</categoria>
+					<nome>Laboratório de Física Geral I</nome>
+					<categoria>obrigatória</categoria>
 					<creditos>
 						<aula>2</aula>
 						<trabalho>0</trabalho>
 					</creditos>
 				</disciplina>
 				<disciplina id="IAU0126">
-					<nome>Humanidades e CiÃªncias Sociais</nome>
-					<categoria>obrigatÃ³ria</categoria>
+					<nome>Humanidades e Ciências Sociais</nome>
+					<categoria>obrigatória</categoria>
 					<creditos>
 						<aula>2</aula>
 						<trabalho>0</trabalho>
 					</creditos>
 				</disciplina>
 				<disciplina id="SEL0600">
-					<nome>InformaÃ§Ã£o Profissional em Engenharia de ComputaÃ§Ã£o I</nome>
-					<categoria>obrigatÃ³ria</categoria>
+					<nome>Informação Profissional em Engenharia de Computação I</nome>
+					<categoria>obrigatória</categoria>
 					<creditos>
 						<aula>1</aula>
 						<trabalho>0</trabalho>
 					</creditos>
 				</disciplina>
 				<disciplina id="SMA0300">
-					<nome>Geometria AnalÃ­tica</nome>
-					<categoria>obrigatÃ³ria</categoria>
+					<nome>Geometria Analítica</nome>
+					<categoria>obrigatória</categoria>
 					<creditos>
 						<aula>4</aula>
 						<trabalho>0</trabalho>
 					</creditos>
 				</disciplina>
 				<disciplina id="SMA0301">
-					<nome>CÃ¡lculo I</nome>
-					<categoria>obrigatÃ³ria</categoria>
+					<nome>Cálculo I</nome>
+					<categoria>obrigatória</categoria>
 					<creditos>
 						<aula>6</aula>
 						<trabalho>0</trabalho>
 					</creditos>
 				</disciplina>
 				<disciplina id="SSC0600">
-					<nome>IntroduÃ§Ã£o Ã  CiÃªncia da ComputaÃ§Ã£o I</nome>
-					<categoria>obrigatÃ³ria</categoria>
+					<nome>Introdução à Ciência da Computação I</nome>
+					<categoria>obrigatória</categoria>
 					<creditos>
 						<aula>4</aula>
 						<trabalho>0</trabalho>
 					</creditos>
 				</disciplina>
 				<disciplina id="SSC0601">
-					<nome>LaboratÃ³rio de IntroduÃ§Ã£o Ã  CiÃªncia da ComputaÃ§Ã£o I</nome>
-					<categoria>obrigatÃ³ria</categoria>
+					<nome>Laboratório de Introdução à Ciência da Computação I</nome>
+					<categoria>obrigatória</categoria>
 					<creditos>
 						<aula>2</aula>
 						<trabalho>2</trabalho>
 					</creditos>
 				</disciplina>
 				<disciplina id="SSC0671">
-					<nome>InformaÃ§Ã£o Profissional em Engenharia da ComputaÃ§Ã£o II</nome>
-					<categoria>obrigatÃ³ria</categoria>
+					<nome>Informação Profissional em Engenharia da Computação II</nome>
+					<categoria>obrigatória</categoria>
 					<creditos>
 						<aula>1</aula>
 						<trabalho>0</trabalho>
 					</creditos>
 				</disciplina>
 				<disciplina id="SSC0530">
-					<nome>IntroduÃ§Ã£o Ã  Sistemas de InformaÃ§Ã£o</nome>
+					<nome>Introdução à Sistemas de Informação</nome>
 					<categoria>eletiva</categoria>
 					<creditos>
 						<aula>2</aula>
@@ -88,7 +88,7 @@
 		</curso>
 	</disciplinasDisponiveis>
 	<aluno id="7526989">
-		<nome>Davi DiÃ³rio Mendes</nome>
+		<nome>Davi Diório Mendes</nome>
 		<semestre id="1">
 			<disciplina ref="FCM0101" status="aprovado">
 				<frequencia>100</frequencia>

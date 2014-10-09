@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <schema targetNamespace="http://www.example.com/curriculo" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.example.com/curriculo" elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 	
@@ -12,7 +12,7 @@
 
 	<simpleType name="categoryType">
 		<restriction base="string">
-			<enumeration value="obrigatÃ³ria" />
+			<enumeration value="obrigatória" />
 			<enumeration value="eletiva"     />
 		</restriction>
 	</simpleType>
@@ -49,9 +49,7 @@
 	<complexType name="classType">
 		<sequence>
 			<element name="nome" type="string" />
-			<element name="periodo" type="c:periodType" maxOccurs="unbounded">
-				
-			</element>
+			<element name="periodo" type="c:periodType" maxOccurs="unbounded" />
 		</sequence>
 		<attribute name="id" use="required">
 			<simpleType>
@@ -65,7 +63,7 @@
 	<complexType name="availableCoursesType">
 		<sequence>
 			<element name="curso" type="c:classType" maxOccurs="unbounded">
-				<!--MantÃ©m id dos perÃ­odos como Ãºnico-->
+				<!--Mantém id dos períodos como único-->
 				<unique name="periodId">
 					<selector xpath="periodo" />
 					<field xpath="@id" />
@@ -142,12 +140,12 @@
 			<selector xpath="aluno" />
 			<field xpath="@id" />
 		</unique>
-		<!--MantÃ©m id de periodo/disciplinas como chave primÃ¡ria-->
+		<!--Mantém id de periodo/disciplinas como chave primária-->
 		<key name="courseId">
 			<selector xpath="disciplinasDisponiveis/curso/periodo/disciplina" />
 			<field xpath="@id" />
 		</key>
-		<!--MantÃ©m ref de semestre/disciplina como chave estrangeira-->
+		<!--Mantém ref de semestre/disciplina como chave estrangeira-->
 		<keyref name="courseReference" refer="c:courseId">
 			<selector xpath="aluno/semestre/disciplina" />
 			<field xpath="@ref" />
