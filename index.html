@@ -2,11 +2,13 @@
 <html>
 	<head>
 		<meta charset="iso-8859-1" />
-		<title>SCC0661 - Projeto 1</title>
+		<title>SCC0661 - Multimídia e Hipermídia</title>
 		<link rel="stylesheet" href="style.css" />
+		<script type="text/javascript" src="script.js" />
 	</head>
 
 	<body>
+
 		<header>
 			<h1>SCC0661 - Multimídia e Hipermídia</h1>
 			<h2>Projeto 1 - Histórico de Graduação</h2>
@@ -16,30 +18,28 @@
 			<aside>
 				<form>
 					<ul>
+						<li>Filtros</li>
 						<li><label>Aluno</label></li>
-						<li id="studentSelect"></li>
+						<li>
+							<select name='aluno' id='studentSelector'>
+							</select>
+						</li>
 						<li>
 							<fieldset>
-								<legend>Historico</legend>
+								<legend>Histórico:</legend>
 								<ul>
-									<li><input type="radio" name="history" value="full"  />com reprovações</li>
-									<li><input type="radio" name="history" value="clean" />sem reprovações</li>
+									<li><input type='radio' value='full' />com reprovações</li>
+									<li><input type='radio' value='clean' />sem reprovações</li>
 								</ul>
 							</fieldset>
 						</li>
 					</ul>
-					
 				</form>
 			</aside>
-
 			<div id='page-content'>
-				Testing page content
+				teste
 			</div>
 		</div>
 
-		<footer>
-
-		</footer>
 	</body>
-
 </html>
