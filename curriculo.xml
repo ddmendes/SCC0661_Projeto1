@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<curriculo>
+	<curso>Engenharia de Computação</curso>
+	<periodo id="1">
+		<disciplina id="FCM0101">
+			<nome>Física I</nome>
+			<categoria>obrigatória</categoria>
+			<creditos>
+				<aula>6</aula>
+				<trabalho>0</trabalho>
+			</creditos>
+		</disciplina>
+		<disciplina id="FFI0180">
+			<nome>Laboratório de Física Geral I</nome>
+			<categoria>obrigatória</categoria>
+			<creditos>
+				<aula>2</aula>
+				<trabalho>0</trabalho>
+			</creditos>
+		</disciplina>
+		<disciplina id="IAU0126">
+			<nome>Humanidades e Ciências Sociais</nome>
+			<categoria>obrigatória</categoria>
+			<creditos>
+				<aula>2</aula>
+				<trabalho>0</trabalho>
+			</creditos>
+		</disciplina>
+		<disciplina id="SEL0600">
+			<nome>Informação Profissional em Engenharia de Computação I</nome>
+			<categoria>obrigatória</categoria>
+			<creditos>
+				<aula>1</aula>
+				<trabalho>0</trabalho>
+			</creditos>
+		</disciplina>
+		<disciplina id="SMA0300">
+			<nome>Geometria Analítica</nome>
+			<categoria>obrigatória</categoria>
+			<creditos>
+				<aula>4</aula>
+				<trabalho>0</trabalho>
+			</creditos>
+		</disciplina>
+		<disciplina id="SMA0301">
+			<nome>Cálculo I</nome>
+			<categoria>obrigatória</categoria>
+			<creditos>
+				<aula>6</aula>
+				<trabalho>0</trabalho>
+			</creditos>
+		</disciplina>
+		<disciplina id="SSC0600">
+			<nome>Introdução à Ciência da Computação I</nome>
+			<categoria>obrigatória</categoria>
+			<creditos>
+				<aula>4</aula>
+				<trabalho>0</trabalho>
+			</creditos>
+		</disciplina>
+		<disciplina id="SSC0601">
+			<nome>Laboratório de Introdução à Ciência da Computação I</nome>
+			<categoria>obrigatória</categoria>
+			<creditos>
+				<aula>2</aula>
+				<trabalho>2</trabalho>
+			</creditos>
+		</disciplina>
+		<disciplina id="SSC0671">
+			<nome>Informação Profissional em Engenharia da Computação II</nome>
+			<categoria>obrigatória</categoria>
+			<creditos>
+				<aula>1</aula>
+				<trabalho>0</trabalho>
+			</creditos>
+		</disciplina>
+		<disciplina id="SSC0530">
+			<nome>Introdução à Sistemas de Informação</nome>
+			<categoria>eletiva</categoria>
+			<creditos>
+				<aula>2</aula>
+				<trabalho>0</trabalho>
+			</creditos>
+		</disciplina>
+	</periodo>
+</curriculo>
