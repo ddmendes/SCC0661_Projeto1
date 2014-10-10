@@ -1,14 +1,29 @@
+/**
+ * Objeto de requisição HTTP.
+ */
 var req = null;
-var console = null;
-var lastChild = null;
+
+/**
+ * Documento XML com os curriculos.
+ */
 var curriculosXML = null;
-var knownStudentsXSL = null;
+
+/**
+ * Estados do objeto de requisição.
+ */
 var READY_STATE_UNINTIALIZED = 0;
 var READY_STATE_LOADING      = 1;
 var READY_STATE_LOADED       = 2;
 var READY_STATE_INTERACTIVE  = 3;
 var READY_STATE_COMPLETE     = 4;
 
+/**
+ * doXSL(xml, xsl)
+ * Aplica uma transformação XSL a um documento XML.
+ * @param xml Documento XML a ser processado pelo XSL.
+ * @param xsl Documento XSL com a transformação a ser aplicada.
+ * @return DocumentFragment com o resultado da transformação.
+ */
 function doXSL(xml, xsl) {
 	if(xml == null || xsl == null) {
 		return null;
@@ -21,6 +36,14 @@ function doXSL(xml, xsl) {
 	}
 }
 
+/**
+ * sendReaquest(url, callback, params, HttpMethod)
+ * Envia requisição assíncrona ao servidor.
+ * @param url Endereço invocado pela requisição.
+ * @param callback Função de tratamento do retorno da requisição.
+ * @param params Parâmetros a serem enviados (opcional).
+ * @param HttpMethod Método HTTP a ser utilizado na requisição (opcional).
+ */
 function sendRequest(url, callback, params = null, HttpMethod = null) {
 	if(!HttpMethod) {
 		HttpMethod = "GET";
@@ -34,6 +57,11 @@ function sendRequest(url, callback, params = null, HttpMethod = null) {
 	}
 }
 
+/**
+ * initXMLHTTPRequest()
+ * Instancia um objeto de requisição http.
+ * @return Objeto de requisição http.
+ */
 function initXMLHTTPRequest() {
 	var xRequest = null;
 	if(window.XMLHttpRequest) {
@@ -44,52 +72,42 @@ function initXMLHTTPRequest() {
 	return xRequest;
 }
 
-function onReadyState() {
-	var ready = req.readyState;
-	var data = null;
-
-	if(ready == READY_STATE_COMPLETE) {
-		toConsole(req.responseText);
-	}
-}
-
-function toConsole(data) {
-	if(console != null) {
-		var newChild = document.createElement("div");
-		var txt = document.createTextNode(data);
-		newChild.appendChild(txt);
-		console.replaceChild(newChild, lastChild);
-		lastChild = newChild;
-	}
-}
-
+/**
+ * saveCurriculo()
+ * Salva o arquivo de currículo requisitado assíncronamente.
+ */
 function saveCurriculo() {
 	if(req.readyState == READY_STATE_COMPLETE) {
 		curriculosXML = req.responseXML;
-		sendRequest("knownStudents.xsl", saveKnownStudents);
+		sendRequest("knownStudents.xsl", showKnownStudents);
 	}
 }
 
-function saveKnownStudents() {
-	if(req.readyState == READY_STATE_COMPLETE) {
-		knownStudentsXSL = req.responseXML;
-		showKnownStudents();
-	}
-}
-
+/**
+ * showKnownStudents()
+ * Popula o dropdown de estudantes com os dados do arquivo de currículos.
+ */
 function showKnownStudents() {
-	if(curriculosXML != null && knownStudentsXSL != null) {
-		var fragment = doXSL(curriculosXML, knownStudentsXSL);
-		var ss = document.getElementById("studentSelector");
-		ss.appendChild(fragment);
-		knownStudentsXSL = fragment;
+	if(req.readyState == READY_STATE_COMPLETE) {
+		var fragment = doXSL(curriculosXML, req.responseXML);
+		document.getElementById("studentSelector").appendChild(fragment);
 	}
 }
  
+/**
+ * onDocumentLoad()
+ * onLoad listener da tag body.
+ * Requisita assíncronamente o arquivo curriculos.xml.
+ */
 function onDocumentLoad() {
 	sendRequest("curriculos.xml", saveCurriculo);
 }
 
+/**
+ * formChangeListener()
+ * onChange listener para o formulário de filtros.
+ * Requisita o XSL de transformação conforme o filtro escolhido.
+ */
 function formChangeListener() {
 	var history = document.getElementsByClassName("history");
 	for(var h in history) {

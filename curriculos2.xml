@@ -85,6 +85,16 @@
 					</c:creditos>
 				</c:disciplina>
 			</c:periodo>
+			<c:periodo id="2">
+				<c:disciplina id="FCM0102">
+					<c:nome>Física II</c:nome>
+					<c:categoria>eletiva</c:categoria>
+					<c:creditos>
+						<c:aula>6</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+			</c:periodo>
 		</c:curso>
 	</c:disciplinasDisponiveis>
 	<c:aluno id="7526989">
@@ -128,13 +138,13 @@
 			</c:disciplina>
 		</c:semestre>
 	</c:aluno>
-	<c:aluno id="7476282">
-		<c:nome>Jurandir Macedo</c:nome>
-		<c:semestre id="1">
-			<c:disciplina ref="SSC0671" status="aprovado">
-				<c:frequencia>100</c:frequencia>
-				<c:nota>7.4</c:nota>
-			</c:disciplina>
-		</c:semestre>
-	</c:aluno>
+	<aluno id="7017647">
+		<nome>João da Silva</nome>
+	</aluno>
+	<aluno id="7674521">
+		<nome>Juca Mun Dongo</nome>
+	</aluno>
+	<aluno id="686875">
+		<nome>Elise Gobbo</nome>
+	</aluno>
 </c:curriculos>
