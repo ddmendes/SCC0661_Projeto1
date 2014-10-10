@@ -3,11 +3,12 @@
 	<head>
 		<meta charset="iso-8859-1" />
 		<title>SCC0661 - Multimídia e Hipermídia</title>
-		<link rel="stylesheet" href="style.css" />
-		<script type="text/javascript" src="script.js" />
+		<link rel="stylesheet" href="style.css" />	
+		<script type="text/javascript" src="script.js">
+		</script>
 	</head>
 
-	<body>
+	<body onLoad="onDocumentLoad();">
 
 		<header>
 			<h1>SCC0661 - Multimídia e Hipermídia</h1>
@@ -16,28 +17,26 @@
 
 		<div id='content'>
 			<aside>
-				<form>
+				<form onChange="formChangeListener();">
 					<ul>
 						<li>Filtros</li>
 						<li><label>Aluno</label></li>
 						<li>
-							<select name='aluno' id='studentSelector'>
-							</select>
+							<select name="student" id="studentSelector"></select>
 						</li>
 						<li>
 							<fieldset>
 								<legend>Histórico:</legend>
 								<ul>
-									<li><input type='radio' value='full' />com reprovações</li>
-									<li><input type='radio' value='clean' />sem reprovações</li>
+									<li><input type='radio' name='history' class='history' value='full' />com reprovações</li>
+									<li><input type='radio' name='history' class='history' value='clean' />sem reprovações</li>
 								</ul>
 							</fieldset>
 						</li>
 					</ul>
 				</form>
 			</aside>
-			<div id='page-content'>
-				teste
+			<div id="page-content">
 			</div>
 		</div>
 
