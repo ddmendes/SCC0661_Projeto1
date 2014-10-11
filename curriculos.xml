@@ -85,6 +85,146 @@
 					</c:creditos>
 				</c:disciplina>
 			</c:periodo>
+			<c:periodo id="2">
+				<c:disciplina id="FCM0102">
+					<c:nome>Física II</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>6</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="FFI0181">
+					<c:nome>Laboratório de Física Geral II</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>2</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SSC06061">
+					<c:nome>Introdução a Ciências da Computação II</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>6</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SCC0602">
+					<c:nome>Algoritmos e Estruturas de Dados I</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>6</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SMA0332">
+					<c:nome>Cálculo II</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>6</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SME0641">
+					<c:nome>Álgebra Linear e Equações Diferenciais</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>4</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SQM0405">
+					<c:nome>Química Geral e Expperimental</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>5</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+			</c:periodo>
+			<c:periodo id="3">
+				<c:disciplina id="IAU0678">
+					<c:nome>Desenho</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>2</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SCC0603">
+					<c:nome>Algoritmos e Estruturas de Dados II</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>4</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SEL0601">
+					<c:nome>Materiais Elétricos</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>2</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SEL0602">
+					<c:nome>Circuitos Elétricos</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>4</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SEL0608">
+					<c:nome>Eletromagnetismo</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>4</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SEL0628">
+					<c:nome>Sistemas Digitais</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>4</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SET0623">
+					<c:nome>Mecânica dos Sólidos</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>2</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SHS0619">
+					<c:nome>Fenômenos de Transporte</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>2</c:aula>
+						<c:trabalho>2</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SMA0333">
+					<c:nome>Cálculo III</c:nome>
+					<c:categoria>obrigatória</c:categoria>
+					<c:creditos>
+						<c:aula>4</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+				<c:disciplina id="SCC0212">
+					<c:nome>Algoritmos em Grafos</c:nome>
+					<c:categoria>eletiva</c:categoria>
+					<c:creditos>
+						<c:aula>4</c:aula>
+						<c:trabalho>0</c:trabalho>
+					</c:creditos>
+				</c:disciplina>
+			</c:periodo>
 		</c:curso>
 	</c:disciplinasDisponiveis>
 	<c:aluno id="7546989">
@@ -131,7 +271,92 @@
 	<c:aluno id="7476282">
 		<c:nome>Jurandir Macedo</c:nome>
 		<c:semestre id="1">
+			<c:disciplina ref="FCM0101" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>5.9</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="FFI0180" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>9.0</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="IAU0126" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>9.0</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="SEL0600" status="reprovado">
+				<c:frequencia>50</c:frequencia>
+				<c:nota>3.0</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="SMA0300" status="reprovado">
+				<c:frequencia>80</c:frequencia>
+				<c:nota>4.5</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="SMA0301" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>6.1</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="SSC0600" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>9.4</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="SSC0601" status="aprovado">
+				<c:frequencia>88</c:frequencia>
+				<c:nota>9.8</c:nota>
+			</c:disciplina>
 			<c:disciplina ref="SSC0671" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>7.4</c:nota>
+			</c:disciplina>
+		</c:semestre>
+	</c:aluno>
+		<c:aluno id="1102394">
+		<c:nome>Maria Aparecida da Silva</c:nome>
+		<c:semestre id="1">
+			<c:disciplina ref="FCM0101" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>5.9</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="FFI0180" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>9.0</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="IAU0126" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>9.0</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="SEL0600" status="aprovado">
+				<c:frequencia>93</c:frequencia>
+				<c:nota>10.0</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="SMA0300" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>8.5</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="SMA0301" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>6.1</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="SSC0600" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>9.4</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="SSC0601" status="aprovado">
+				<c:frequencia>88</c:frequencia>
+				<c:nota>9.8</c:nota>
+			</c:disciplina>
+			<c:disciplina ref="SSC0671" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>7.4</c:nota>
+			</c:disciplina>
+		</c:semestre>
+		<c:semestre id="2">
+			<c:disciplina ref="SSC0671" status="aprovado">
+				<c:frequencia>100</c:frequencia>
+				<c:nota>7.4</c:nota>
+			</c:disciplina>
+		</c:semestre>
+		<c:semestre id="3">
+			<c:disciplina ref="SEL0608" status="aprovado">
 				<c:frequencia>100</c:frequencia>
 				<c:nota>7.4</c:nota>
 			</c:disciplina>
