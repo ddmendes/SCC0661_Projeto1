@@ -87,7 +87,7 @@
 			</c:periodo>
 		</c:curso>
 	</c:disciplinasDisponiveis>
-	<c:aluno id="7526989">
+	<c:aluno id="7546989">
 		<c:nome>Davi Diório Mendes</c:nome>
 		<c:semestre id="1">
 			<c:disciplina ref="FCM0101" status="aprovado">
