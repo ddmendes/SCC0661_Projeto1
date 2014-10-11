@@ -35,32 +35,34 @@
 							<td>Status</td>
 						</tr>
 						<xsl:for-each select="c:disciplina">
-							<xsl:variable name="discRef" select="@ref" />
-							<xsl:variable name="discFreq" select="c:frequencia" />
-							<xsl:variable name="discGrade" select="c:nota" />
-							<xsl:variable name="discStatus" select="@status" />
-							<xsl:for-each select="/c:curriculos/c:disciplinasDisponiveis/c:curso/c:periodo">
-								<xsl:for-each select="c:disciplina">
-									<xsl:if test="$discRef = @id">
-										<tr>
-											<td><xsl:value-of select="@id" /></td>
-											<td><xsl:value-of select="c:nome" /></td>
-											<td><xsl:value-of select="c:creditos/c:aula" /></td>
-											<td><xsl:value-of select="c:creditos/c:trabalho" /></td>
-											<td><xsl:value-of select="$discFreq" /></td>
-											<td><xsl:value-of select="$discGrade" /></td>
-											<td>
-												<xsl:choose>
-													<xsl:when test="$discStatus = 'aprovado'">A</xsl:when>
-													<xsl:when test="$discStatus = 'reprovado'">R</xsl:when>
-													<xsl:when test="$discStatus = 'cursando'">C</xsl:when>
-													<xsl:when test="$discStatus = 'trancado'">T</xsl:when>
-												</xsl:choose>
-											</td>
-										</tr>
-									</xsl:if>
+							<xsl:if test="@status != 'reprovado'">
+								<xsl:variable name="discRef" select="@ref" />
+								<xsl:variable name="discFreq" select="c:frequencia" />
+								<xsl:variable name="discGrade" select="c:nota" />
+								<xsl:variable name="discStatus" select="@status" />
+								<xsl:for-each select="/c:curriculos/c:disciplinasDisponiveis/c:curso/c:periodo">
+									<xsl:for-each select="c:disciplina">
+										<xsl:if test="$discRef = @id">
+											<tr>
+												<td><xsl:value-of select="@id" /></td>
+												<td><xsl:value-of select="c:nome" /></td>
+												<td><xsl:value-of select="c:creditos/c:aula" /></td>
+												<td><xsl:value-of select="c:creditos/c:trabalho" /></td>
+												<td><xsl:value-of select="$discFreq" /></td>
+												<td><xsl:value-of select="$discGrade" /></td>
+												<td>
+													<xsl:choose>
+														<xsl:when test="$discStatus = 'aprovado'">A</xsl:when>
+														<xsl:when test="$discStatus = 'reprovado'">R</xsl:when>
+														<xsl:when test="$discStatus = 'cursando'">C</xsl:when>
+														<xsl:when test="$discStatus = 'trancado'">T</xsl:when>
+													</xsl:choose>
+												</td>
+											</tr>
+										</xsl:if>
+									</xsl:for-each>
 								</xsl:for-each>
-							</xsl:for-each>
+							</xsl:if>
 						</xsl:for-each>
 					</xsl:for-each>
 				</table>

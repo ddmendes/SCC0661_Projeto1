@@ -101,6 +101,10 @@ function showKnownStudents() {
 	}
 }
 
+/**
+ * showHistory()
+ * Exibe o histórico escolhido.
+ */
 function showHistory() {
 	if(req.readyState == READY_STATE_COMPLETE) {
 		var hist = req.responseXML;
@@ -129,5 +133,7 @@ function formChangeListener() {
 	var history = document.getElementById("hFull").checked;
 	if(history) {
 		sendRequest("fullHistory.xsl?student=" + student, showHistory);
+	} else {
+		sendRequest("cleanHistory.xsl?student=" + student, showHistory);
 	}
 }

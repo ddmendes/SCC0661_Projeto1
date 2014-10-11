@@ -234,7 +234,7 @@
 				<c:frequencia>100</c:frequencia>
 				<c:nota>5.9</c:nota>
 			</c:disciplina>
-			<c:disciplina ref="FFI0180" status="aprovado">
+			<c:disciplina ref="FFI0180" status="reprovado">
 				<c:frequencia>100</c:frequencia>
 				<c:nota>9.0</c:nota>
 			</c:disciplina>
