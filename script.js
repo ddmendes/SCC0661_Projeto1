@@ -9,6 +9,11 @@ var req = null;
 var curriculosXML = null;
 
 /**
+ * Id do estudante a se exibir o histórico.
+ */
+var student = null;
+
+/**
  * Estados do objeto de requisição.
  */
 var READY_STATE_UNINTIALIZED = 0;
@@ -24,20 +29,22 @@ var READY_STATE_COMPLETE     = 4;
  * @param xsl Documento XSL com a transformação a ser aplicada.
  * @return DocumentFragment com o resultado da transformação.
  */
-function doXSL(xml, xsl) {
+function doXSL(xml, xsl, passStudent = false) {
 	if(xml == null || xsl == null) {
 		return null;
 	} else if(window.ActiveXObject) {
 		return xml.transformNode(xsl);
 	} else {
 		var xslProcessor = new XSLTProcessor();
+		if(passStudent)
+			xslProcessor.setParameter(null, "student", student);
 		xslProcessor.importStylesheet(xsl);
 		return xslProcessor.transformToFragment(xml, document);
 	}
 }
 
 /**
- * sendReaquest(url, callback, params, HttpMethod)
+ * sendRequest(url, callback, params, HttpMethod)
  * Envia requisição assíncrona ao servidor.
  * @param url Endereço invocado pela requisição.
  * @param callback Função de tratamento do retorno da requisição.
@@ -93,6 +100,15 @@ function showKnownStudents() {
 		document.getElementById("studentSelector").appendChild(fragment);
 	}
 }
+
+function showHistory() {
+	if(req.readyState == READY_STATE_COMPLETE) {
+		var hist = req.responseXML;
+		hist = doXSL(curriculosXML, hist, true);
+		document.getElementById("page-content").innerHTML = "";
+		document.getElementById("page-content").appendChild(hist);
+	}
+}
  
 /**
  * onDocumentLoad()
@@ -109,10 +125,9 @@ function onDocumentLoad() {
  * Requisita o XSL de transformação conforme o filtro escolhido.
  */
 function formChangeListener() {
-	var history = document.getElementsByClassName("history");
-	for(var h in history) {
-		if(h.checked) {
-			alert(h.value);
-		}
+	student = document.getElementById("studentSelector").value;
+	var history = document.getElementById("hFull").checked;
+	if(history) {
+		sendRequest("fullHistory.xsl?student=" + student, showHistory);
 	}
 }

@@ -309,7 +309,7 @@
 			</c:disciplina>
 		</c:semestre>
 	</c:aluno>
-		<c:aluno id="1102394">
+	<c:aluno id="1102394">
 		<c:nome>Maria Aparecida da Silva</c:nome>
 		<c:semestre id="1">
 			<c:disciplina ref="FCM0101" status="aprovado">
