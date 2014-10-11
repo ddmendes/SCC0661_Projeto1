@@ -1,0 +1,12 @@
+Grupo
+
+ -> Davi Diório Mendes
+ 	nUsp: 7546989
+	Data Designer
+	Interface Developer
+
+ -> Hugo Hiroshi Yamamura
+ 	nUsp: 7126761
+ 	Data Engineer
+
+O Leonardo Crespilho abandonou o desenvolvimento do trabalho.
