@@ -29,7 +29,8 @@ var READY_STATE_COMPLETE     = 4;
  * @param xsl Documento XSL com a transformação a ser aplicada.
  * @return DocumentFragment com o resultado da transformação.
  */
-function doXSL(xml, xsl, passStudent = false) {
+function doXSL(xml, xsl, pStudent) {
+	passStudent = pStudent | false;
 	if(xml == null || xsl == null) {
 		return null;
 	} else if(window.ActiveXObject) {
@@ -51,7 +52,7 @@ function doXSL(xml, xsl, passStudent = false) {
  * @param params Parâmetros a serem enviados (opcional).
  * @param HttpMethod Método HTTP a ser utilizado na requisição (opcional).
  */
-function sendRequest(url, callback, params = null, HttpMethod = null) {
+function sendRequest(url, callback, params, HttpMethod) {
 	if(!HttpMethod) {
 		HttpMethod = "GET";
 	}
